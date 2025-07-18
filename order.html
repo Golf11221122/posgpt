@@ -1,1 +1,58 @@
-<!DOCTYPE html><html><head><title>Order Menu</title></head><body>Order Page</body></html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เมนูอาหาร - โจ๊กจัง</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button onclick="location.href='index.html'" class="back-button">← กลับหน้าแรก</button>
+  <h1>เมนูอาหาร</h1>
+  <div id="menu-container"></div>
+  <h2>รายการที่สั่ง</h2>
+  <ul id="order-list"></ul>
+  <p id="total-price">รวม: 0 บาท</p>
+
+  <script>
+    const menuContainer = document.getElementById('menu-container');
+    const orderList = document.getElementById('order-list');
+    const totalPriceEl = document.getElementById('total-price');
+    let order = [];
+
+    const menu = [
+      { name: "โจ๊กหมู", price: 35 },
+      { name: "โจ๊กไข่เค็ม", price: 40 },
+      { name: "โจ๊กหมู + ไข่เยี่ยวม้า", price: 45 }
+    ];
+
+    function renderOrder() {
+      orderList.innerHTML = '';
+      let total = 0;
+      order.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} x${item.qty} = ${item.price * item.qty} บาท`;
+        total += item.price * item.qty;
+        orderList.appendChild(li);
+      });
+      totalPriceEl.textContent = `รวม: ${total} บาท`;
+    }
+
+    menu.forEach(item => {
+      const btn = document.createElement('button');
+      btn.className = 'menu-button';
+      btn.textContent = `${item.name} - ${item.price} บาท`;
+      btn.onclick = () => {
+        const found = order.find(o => o.name === item.name);
+        if (found) {
+          found.qty++;
+        } else {
+          order.push({ ...item, qty: 1 });
+        }
+        renderOrder();
+      };
+      menuContainer.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
