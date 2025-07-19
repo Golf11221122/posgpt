@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เมนูอาหาร</title>
+  <link rel="stylesheet" href="styles/ordermenu.css">
+</head>
+<body>
+  <div class="overlay" id="overlay" style="display:none" onclick="closeAllPopups()"></div>
+  <header>
+    <button class="btn-nav" onclick="goHome()">← Home</button>
+    <button class="btn-nav" onclick="goBack()">← Back</button>
+  </header>
+
+  <h1>เมนูอาหาร</h1>
+
+  <div class="container">
+    <div class="order-summary" id="orderSummary" style="display: none;">
+      <h3>รายการสั่งซื้อ</h3>
+      <div id="orderItems"></div>
+      <div class="summary-total" id="totalSummary"></div>
+      <button onclick="promptDiscountAuth()">🎁 ส่วนลด</button>
+      <button onclick="submitOrder()">✅ ยืนยันคำสั่งซื้อ</button>
+      <button onclick="cancelOrder()">❌ ยกเลิก</button>
+      <button onclick="removeDiscount()">🧹 ลบส่วนลด</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">กำลังโหลดเมนู...</div>
+  </div>
+
+  <!-- ป๊อปอัปใส่รหัส -->
+  <div class="auth-popup" id="authPopup" style="display:none">
+    <h3>กรอกรหัสยืนยัน</h3>
+    <div id="pinDisplay" style="font-size: 1.5rem; margin: 10px 0;">______</div>
+    <div class="auth-keypad">
+      <div>
+        <button onclick="inputPin('1')">1</button>
+        <button onclick="inputPin('2')">2</button>
+        <button onclick="inputPin('3')">3</button>
+      </div>
+      <div>
+        <button onclick="inputPin('4')">4</button>
+        <button onclick="inputPin('5')">5</button>
+        <button onclick="inputPin('6')">6</button>
+      </div>
+      <div>
+        <button onclick="inputPin('7')">7</button>
+        <button onclick="inputPin('8')">8</button>
+        <button onclick="inputPin('9')">9</button>
+      </div>
+      <div>
+        <button onclick="clearPin()">ลบ</button>
+        <button onclick="inputPin('0')">0</button>
+        <button onclick="submitPin()">ตกลง</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ป๊อปอัปเลือกส่วนลด -->
+  <div class="discount-popup" id="discountPopup" style="display:none">
+    <h3>เลือกระดับส่วนลด</h3>
+    <div class="discount-options">
+      <button onclick="applyDiscount(5)">5%</button>
+      <button onclick="applyDiscount(10)">10%</button>
+      <button onclick="applyDiscount(15)">15%</button>
+      <button onclick="applyDiscount(20)">20%</button>
+    </div>
+  </div>
+
+  <!-- ป๊อปอัปแจ้งรหัสผิด -->
+  <div class="error-popup" id="errorPopup" style="display:none">
+    <h3 style="color:red">❌ รหัสยืนยันไม่ถูกต้อง</h3>
+    <p>กรุณาลองใหม่อีกครั้ง</p>
+  </div>
+
+  <script src="js/ordermenu.js"></script>
+</body>
+</html>
