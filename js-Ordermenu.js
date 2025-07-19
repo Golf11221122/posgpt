@@ -138,6 +138,17 @@ function submitOrder() {
 }
 
 function cancelOrder() {
-  if (confirm("ต้องการยกเลิกการสั่งซื้อใช่ไหม?")) {
-    order = {};
-    disc
+      if (confirm("ต้องการยกเลิกการสั่งซื้อใช่ไหม?")) {
+        order = {};
+        discountPercent = 0;
+        updateSummary();
+      }
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    function goBack() {
+      window.history.back();
+    }
