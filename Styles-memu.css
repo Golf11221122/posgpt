@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #FFA500, #FFFFFF);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  color: #002366;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.button {
+  padding: 25px 50px;
+  margin: 15px;
+  font-size: 2rem;
+  border-radius: 25px;
+  background-color: #ffffffcc;
+  color: #002366;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+.footer-buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer-buttons button {
+  padding: 14px 24px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #ffffffcc;
+  color: #002366;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Pop-up */
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 350px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#popupHeader {
+  background: linear-gradient(to right, #FFA500, #FFFFFF);
+  padding: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #002366;
+  text-align: center;
+}
+
+#popupDisplay {
+  font-size: 2rem;
+  letter-spacing: 10px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 15px;
+}
+
+.popup-grid button {
+  padding: 15px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffffcc;
+  color: #002366;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.popup-grid button:hover {
+  background-color: #fff;
+}
+
+#popupFooter {
+  background: linear-gradient(to right, #ccffcc, #ffffff);
+  text-align: center;
+}
+
+#popupFooter button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: orange;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  background: none;
+  cursor: pointer;
+}
