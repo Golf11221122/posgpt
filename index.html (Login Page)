@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JOKJUNG POS - Login</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <h1>Welcome Happy to day</h1>
+  <div id="datetime"></div>
+  <div id="storeName">JOKJUNG</div>
+
+  <div id="pinDisplay"></div>
+
+  <div class="button-grid">
+    <button class="btn" onclick="appendNumber('1')">1</button>
+    <button class="btn" onclick="appendNumber('2')">2</button>
+    <button class="btn" onclick="appendNumber('3')">3</button>
+    <button class="btn" onclick="appendNumber('4')">4</button>
+    <button class="btn" onclick="appendNumber('5')">5</button>
+    <button class="btn" onclick="appendNumber('6')">6</button>
+    <button class="btn" onclick="appendNumber('7')">7</button>
+    <button class="btn" onclick="appendNumber('8')">8</button>
+    <button class="btn" onclick="appendNumber('9')">9</button>
+    <button class="btn" onclick="clearPin()">X</button>
+    <button class="btn" onclick="appendNumber('0')">0</button>
+    <button class="btn" onclick="login()">LOG IN</button>
+  </div>
+
+  <script src="js/index.js"></script>
+
+</body>
+</html>
